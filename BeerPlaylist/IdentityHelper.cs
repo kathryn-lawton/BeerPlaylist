@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using BeerPlaylist.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BeerPlaylist.models;
 
-namespace Trash_Collector
+
+namespace BeerPlaylist
 {
     public class IdentityHelper
     {
