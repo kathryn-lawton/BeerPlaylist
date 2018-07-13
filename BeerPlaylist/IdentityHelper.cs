@@ -41,7 +41,42 @@ namespace BeerPlaylist
 
             }
 
-        }
+
+            string userName = "admin@mail.com";
+            string password = "Pass1!";
+            
+            ApplicationUser user = userManager.FindByName(userName);
+
+            if (user == null)
+
+            {
+
+            user = new ApplicationUser()
+
+            {
+
+            UserName = userName,
+
+            Email = userName,
+
+            EmailConfirmed = true
+
+            };
+
+            IdentityResult userResult = userManager.Create(user, password);
+
+            if (userResult.Succeeded)
+
+            {
+
+            var result = userManager.AddToRole(user.Id, ROLE_Employee);
+
+            }
+
+            }
+
+            }
+
 
 
     }
