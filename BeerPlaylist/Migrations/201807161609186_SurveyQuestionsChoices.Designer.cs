@@ -7,13 +7,13 @@ namespace BeerPlaylist.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initialmigration : IMigrationMetadata
+    public sealed partial class SurveyQuestionsChoices : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SurveyQuestionsChoices));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807131345181_initialmigration"; }
+            get { return "201807161609186_SurveyQuestionsChoices"; }
         }
         
         string IMigrationMetadata.Source

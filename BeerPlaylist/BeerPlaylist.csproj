@@ -202,14 +202,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityHelper.cs" />
-    <Compile Include="Migrations\201807131345181_initialmigration.cs" />
-    <Compile Include="Migrations\201807131345181_initialmigration.Designer.cs">
-      <DependentUpon>201807131345181_initialmigration.cs</DependentUpon>
+    <Compile Include="Migrations\201807161609186_SurveyQuestionsChoices.cs" />
+    <Compile Include="Migrations\201807161609186_SurveyQuestionsChoices.Designer.cs">
+      <DependentUpon>201807161609186_SurveyQuestionsChoices.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Choices.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Questions.cs" />
+    <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\SurveyQuestionsChoicesVeiwModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -290,8 +294,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807131345181_initialmigration.resx">
-      <DependentUpon>201807131345181_initialmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807161609186_SurveyQuestionsChoices.resx">
+      <DependentUpon>201807161609186_SurveyQuestionsChoices.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
