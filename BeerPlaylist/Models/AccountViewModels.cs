@@ -80,6 +80,30 @@ namespace BeerPlaylist.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Street Adress")]
+        public string StreetAdress { get; set; }
+
+        [Required]
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [Required]
+        [Display(Name = "Zipcode")]
+        public int ZipCode { get; set; }
+
+        [Required]
+        [Display(Name = "Favorite Beer")]
+        public string FavoriteBeer { get; set; }
+
 
     }
 
