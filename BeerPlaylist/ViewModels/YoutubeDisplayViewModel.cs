@@ -7,6 +7,7 @@ namespace BeerPlaylist.ViewModels
 {
 	public class YoutubeDisplayViewModel
 	{
+
 		public string YoutubeVideoId { get; set; }
 	}
 }
