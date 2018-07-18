@@ -26,5 +26,10 @@ namespace BeerPlaylist.Controllers
 
 			return View();
 		}
+
+		public ActionResult QuizResults()
+		{
+			return View();
+		}
 	}
 }
