@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +17,25 @@ namespace BeerPlaylist.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Street Adress")]
+        public string StreetAdress { get; set; }
+
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [Display(Name = "Zip Code")]
+        public int ZipCode { get; set; }
+
+        [Display(Name = "Favorite Beer")]
+        public string FavoriteBeer { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -30,9 +50,13 @@ namespace BeerPlaylist.Models
             return new ApplicationDbContext();
         }
         public virtual DbSet<Forum> Forum { get; set; }
-		public DbSet<Beer> Beer { get; set; }
+
+        
+
+		//public DbSet<Beer> Beer { get; set; }
 		public DbSet<Choices> Choices { get; set; }
 		public DbSet<Questions> Questions { get; set; }
 		public DbSet<Survey> Survey { get; set; }
+
     }
 }

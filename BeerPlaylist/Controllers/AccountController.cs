@@ -21,8 +21,10 @@ namespace BeerPlaylist.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        ApplicationDbContext context;
         public AccountController()
         {
+            context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -159,6 +161,14 @@ namespace BeerPlaylist.Controllers
 
 
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.StreetAdress = model.StreetAdress;
+                user.State = model.State;
+                user.ZipCode = model.ZipCode;
+                user.FavoriteBeer = model.FavoriteBeer;
+
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
