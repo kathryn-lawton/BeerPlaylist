@@ -203,6 +203,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityHelper.cs" />
+    <Compile Include="Migrations\201807180201420_initial.cs" />
+    <Compile Include="Migrations\201807180201420_initial.Designer.cs">
+      <DependentUpon>201807180201420_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807180316418_forum Update.cs" />
+    <Compile Include="Migrations\201807180316418_forum Update.Designer.cs">
+      <DependentUpon>201807180316418_forum Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Choices.cs" />
     <Compile Include="Models\Forum.cs" />
@@ -273,7 +282,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Forum\ForumList.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +299,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807180201420_initial.resx">
+      <DependentUpon>201807180201420_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180316418_forum Update.resx">
+      <DependentUpon>201807180316418_forum Update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
