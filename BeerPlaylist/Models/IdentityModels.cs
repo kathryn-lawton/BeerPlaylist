@@ -53,10 +53,10 @@ namespace BeerPlaylist.Models
 
         
 
-		//public DbSet<Beer> Beer { get; set; }
+		public DbSet<Beer> Beer { get; set; }
 		public DbSet<Choices> Choices { get; set; }
 		public DbSet<Questions> Questions { get; set; }
 		public DbSet<Survey> Survey { get; set; }
-
-    }
+		public DbSet<BeerType> BeerType { get; set; }
+	}
 }

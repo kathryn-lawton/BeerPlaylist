@@ -203,7 +203,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityHelper.cs" />
+    <Compile Include="Migrations\201807181957141_Initial.cs" />
+    <Compile Include="Migrations\201807181957141_Initial.Designer.cs">
+      <DependentUpon>201807181957141_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807182005110_newmigration.cs" />
+    <Compile Include="Migrations\201807182005110_newmigration.Designer.cs">
+      <DependentUpon>201807182005110_newmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807182015564_newmigration1.cs" />
+    <Compile Include="Migrations\201807182015564_newmigration1.Designer.cs">
+      <DependentUpon>201807182015564_newmigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807182026308_newmigration2.cs" />
+    <Compile Include="Migrations\201807182026308_newmigration2.Designer.cs">
+      <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Beer.cs" />
+    <Compile Include="Models\BeerType.cs" />
     <Compile Include="Models\Choices.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -275,6 +294,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Forum\Index.cshtml" />
+    <Content Include="Views\Home\Beers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +311,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807181957141_Initial.resx">
+      <DependentUpon>201807181957141_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807182005110_newmigration.resx">
+      <DependentUpon>201807182005110_newmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807182015564_newmigration1.resx">
+      <DependentUpon>201807182015564_newmigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807182026308_newmigration2.resx">
+      <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

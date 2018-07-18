@@ -26,5 +26,20 @@ namespace BeerPlaylist.Controllers
 
 			return View();
 		}
+
+		//[HttpGet]
+		//public ActionResult Beers(string searching)
+		//{
+		//	List<Beer> beers = new List<Beer>();
+		//	if (!string.IsNullOrEmpty(searching))
+		//	{
+		//		beers = db.Beer.Where(b => b.Name.Contains(searching)).ToList();
+		//	}
+		//	else
+		//	{
+		//		beers = db.Beer.ToList();
+		//	}
+		//	return View(beers.ToList());
+		//}
 	}
 }
