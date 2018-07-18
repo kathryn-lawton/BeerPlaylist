@@ -1,0 +1,55 @@
+﻿@* Add view model here for the videoid returned from your search *@
+
+@model BeerPlaylist.ViewModels.YoutubeDisplayViewModel
+
+@{
+    ViewBag.Title = "QuizResults";
+}
+
+<h2>QuizResults</h2>
+<body>
+    <center>
+        <<iframe id="player" type="text/html" width="640" height="390"
+                 src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+                 frameborder="0"></iframe>
+    </center>
+
+    <script>
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+            function onYoutubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: 'aDvVzqteouM', // Add the video id here in C#
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    setTimeout(stopVideo, 6000);
+                    done = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+    </script>
+</body>
+
+
+
