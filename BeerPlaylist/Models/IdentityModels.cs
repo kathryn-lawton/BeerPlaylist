@@ -50,5 +50,9 @@ namespace BeerPlaylist.Models
             return new ApplicationDbContext();
         }
         public virtual DbSet<Forum> Forum { get; set; }
+		public DbSet<Beer> Beer { get; set; }
+		public DbSet<Choices> Choices { get; set; }
+		public DbSet<Questions> Questions { get; set; }
+		public DbSet<Survey> Survey { get; set; }
     }
 }

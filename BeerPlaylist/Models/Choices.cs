@@ -12,5 +12,6 @@ namespace BeerPlaylist.Models
         public int ChoiceID { get; set; }
         public int QuestionID { get; set; }
         public string BeerChoice { get; set; }
-    }
+		public string AnswerText { get; set; }
+	}
 }
