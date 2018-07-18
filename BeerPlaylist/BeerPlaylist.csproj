@@ -218,6 +218,9 @@
     <Compile Include="Migrations\201807182026308_newmigration2.cs" />
     <Compile Include="Migrations\201807182026308_newmigration2.Designer.cs">
       <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
+    <Compile Include="Migrations\201807181345549_initial.cs" />
+    <Compile Include="Migrations\201807181345549_initial.Designer.cs">
+      <DependentUpon>201807181345549_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -313,6 +316,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201807181957141_Initial.resx">
       <DependentUpon>201807181957141_Initial.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +328,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807182026308_newmigration2.resx">
       <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201807181345549_initial.resx">
+      <DependentUpon>201807181345549_initial.cs</DependentUpon>
+>>>>>>> 06c16f3f99ee371dfa3e57f435d071f81a3740f5
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
