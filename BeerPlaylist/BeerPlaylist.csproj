@@ -203,7 +203,25 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityHelper.cs" />
+    <Compile Include="Migrations\201807180109153_initialMigration.cs" />
+    <Compile Include="Migrations\201807180109153_initialMigration.Designer.cs">
+      <DependentUpon>201807180109153_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807180111317_addBeerTable.cs" />
+    <Compile Include="Migrations\201807180111317_addBeerTable.Designer.cs">
+      <DependentUpon>201807180111317_addBeerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807180155173_followupmigration.cs" />
+    <Compile Include="Migrations\201807180155173_followupmigration.Designer.cs">
+      <DependentUpon>201807180155173_followupmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807180352128_nextmigration.cs" />
+    <Compile Include="Migrations\201807180352128_nextmigration.Designer.cs">
+      <DependentUpon>201807180352128_nextmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Beer.cs" />
     <Compile Include="Models\Choices.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -213,6 +231,7 @@
     <Compile Include="Models\SurveyQuestionsChoicesVeiwModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\YoutubeDisplayViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -274,6 +293,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Forum\ForumList.cshtml" />
+    <Content Include="Views\Home\QuizResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +310,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807180109153_initialMigration.resx">
+      <DependentUpon>201807180109153_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180111317_addBeerTable.resx">
+      <DependentUpon>201807180111317_addBeerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180155173_followupmigration.resx">
+      <DependentUpon>201807180155173_followupmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180352128_nextmigration.resx">
+      <DependentUpon>201807180352128_nextmigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
