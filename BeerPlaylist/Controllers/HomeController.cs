@@ -17,21 +17,6 @@ namespace BeerPlaylist.Controllers
 			return View();
 		}
 
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-
-			return View();
-		}
-
-		public ActionResult Contact()
-		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
-		}
-
-
 		[HttpGet]
 		public ActionResult Beers(string searching)
 		{
@@ -39,10 +24,10 @@ namespace BeerPlaylist.Controllers
 			if (!string.IsNullOrEmpty(searching))
 			{
 				beers = db.Beer.Where(
-					b => b.Name.Contains(searching) 
-					|| b.BeerType.Type.Contains(searching) 
-					|| b.City.Contains(searching) 
-					|| b.ABV.Contains(searching) 
+					b => b.Name.Contains(searching)
+					|| b.BeerType.Type.Contains(searching)
+					|| b.City.Contains(searching)
+					|| b.ABV.Contains(searching)
 					|| b.Price.Contains(searching)).Include(b => b.BeerType).ToList();
 			}
 			else
@@ -58,6 +43,36 @@ namespace BeerPlaylist.Controllers
 			var model = new SurveyViewModel();
 			model.questions = db.Questions.ToList();
 			model.choices = db.Choices.ToList();
+
+			return View(model);
+		}
+
+		[HttpPost]
+		public ActionResult Survey(SurveyViewModel model)
+		{
+			int beerAverage = 0;
+			foreach (var question in model.questions)
+			{
+				var choice = db.Choices.Where(c => c.AnswerText == question.Answer).Select(c => c).FirstOrDefault();
+				beerAverage += choice.BeerTypeId;
+			}
+
+			beerAverage /= model.questions.Count;
+
+			return RedirectToAction("SurveyResults", new { id = beerAverage});
+		}
+
+		[HttpGet]
+		public ActionResult SurveyResults(int? id)
+		{
+			if (id == null)
+			{
+				return HttpNotFound();
+			}
+
+			var model = new SurveyResultsViewModel();
+			model.BeerType = db.BeerType.Where(b => b.BeerTypeId == id).FirstOrDefault();
+			model.Beers = db.Beer.Where(b => b.BeerTypeId == id).ToList();
 
 			return View(model);
 		}

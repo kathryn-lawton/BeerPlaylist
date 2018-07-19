@@ -203,25 +203,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityHelper.cs" />
-    <Compile Include="Migrations\201807181957141_Initial.cs" />
-    <Compile Include="Migrations\201807181957141_Initial.Designer.cs">
-      <DependentUpon>201807181957141_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201807190101229_initialMigration.cs" />
+    <Compile Include="Migrations\201807190101229_initialMigration.Designer.cs">
+      <DependentUpon>201807190101229_initialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807182005110_newmigration.cs" />
-    <Compile Include="Migrations\201807182005110_newmigration.Designer.cs">
-      <DependentUpon>201807182005110_newmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807182026308_newmigration2.cs" />
-    <Compile Include="Migrations\201807182026308_newmigration2.Designer.cs">
-      <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807190006071_questionmig.cs" />
-    <Compile Include="Migrations\201807190006071_questionmig.Designer.cs">
-      <DependentUpon>201807190006071_questionmig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807190035227_questionmig2.cs" />
-    <Compile Include="Migrations\201807190035227_questionmig2.Designer.cs">
-      <DependentUpon>201807190035227_questionmig2.cs</DependentUpon>
+    <Compile Include="Migrations\201807190244220_youtubeIdBeer.cs" />
+    <Compile Include="Migrations\201807190244220_youtubeIdBeer.Designer.cs">
+      <DependentUpon>201807190244220_youtubeIdBeer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -235,6 +223,7 @@
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SurveyResultsViewModel.cs" />
     <Compile Include="ViewModels\SurveyViewModel.cs" />
     <Compile Include="ViewModels\YoutubeDisplayViewModel.cs" />
   </ItemGroup>
@@ -264,6 +253,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SeedData\NewDatabaseSeed_KT.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -275,8 +265,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -301,6 +289,8 @@
     <Content Include="Views\Forum\Index.cshtml" />
     <Content Include="Views\Home\Beers.cshtml" />
     <Content Include="Views\Home\Survey.cshtml" />
+    <Content Include="Views\Home\QuizResults.cshtml" />
+    <Content Include="Views\Home\SurveyResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,20 +309,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807181957141_Initial.resx">
-      <DependentUpon>201807181957141_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807190101229_initialMigration.resx">
+      <DependentUpon>201807190101229_initialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807182005110_newmigration.resx">
-      <DependentUpon>201807182005110_newmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807182026308_newmigration2.resx">
-      <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807190006071_questionmig.resx">
-      <DependentUpon>201807190006071_questionmig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807190035227_questionmig2.resx">
-      <DependentUpon>201807190035227_questionmig2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807190244220_youtubeIdBeer.resx">
+      <DependentUpon>201807190244220_youtubeIdBeer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

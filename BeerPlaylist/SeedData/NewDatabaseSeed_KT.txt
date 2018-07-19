@@ -1,0 +1,77 @@
+context.Questions.AddOrUpdate(
+					q => q.QuestionText,
+					new Models.Questions { QuestionText = "How many beers do you consume each week?" },
+					new Models.Questions { QuestionText = "How late do you stay out on a typical night out?" },
+					new Models.Questions { QuestionText = "Out of the options, which music genre do you listen to most??" },
+					new Models.Questions { QuestionText = "What is your ideal drinking atmosphere?" },
+					new Models.Questions { QuestionText = "What is your age?" }
+					);
+
+			context.BeerType.AddOrUpdate(
+				b => b.Type,
+				new Models.BeerType { Type = "Lager", YoutubeId = "Dlh-dzB2U4Y" },
+				new Models.BeerType { Type = "Wheat Ale", YoutubeId = "Sk5TsrmgEj4" },
+				new Models.BeerType { Type = "IPA", YoutubeId = "rVeMiVU77wo" },
+				new Models.BeerType { Type = "Stout", YoutubeId = "2ZBtPf7FOoM" },
+				new Models.BeerType { Type = "Pilsner", YoutubeId = "7K5piGxkxJQ" }
+				);
+
+			context.SaveChanges();
+
+			context.Beer.AddOrUpdate(
+				b => b.Name,
+				new Models.Beer { Name = "Miller Lite", ABV = "4.1", City = "Milwaukee", Price = "1.25", BeerTypeId = 1 },
+				new Models.Beer { Name = "Coors Lite", ABV = "4.2", City = "Milwaukee", Price = "1.25", BeerTypeId = 1 },
+				new Models.Beer { Name = "Hamm's", ABV = "4.7", City = "Milwaukee", Price = "0.67", BeerTypeId = 1 },
+				new Models.Beer { Name = "Budweiser", ABV = "5", City = "Milwaukee", Price = "1.29", BeerTypeId = 1 },
+				new Models.Beer { Name = "Heineken", ABV = "5", City = "Milwaukee", Price = "1.06", BeerTypeId = 1 },
+				new Models.Beer { Name = "Shock Top Belgian White Ale", ABV = "5.2", City = "Milwaukee", Price = "1.08", BeerTypeId = 2 },
+				new Models.Beer { Name = "Blue Moon", ABV = "5.4", City = "Milwaukee", Price = "2.25", BeerTypeId = 2 },
+				new Models.Beer { Name = "Sierra Nevada Kellerweis", ABV = "4.8", City = "Milwaukee", Price = "1.25", BeerTypeId = 2 },
+				new Models.Beer { Name = "Oberon Ale", ABV = "5.8", City = "Milwaukee", Price = "1.75", BeerTypeId = 2 },
+				new Models.Beer { Name = "Samuel Adams Summer Ale", ABV = "5.3", City = "Milwaukee", Price = "1.17", BeerTypeId = 2 },
+				new Models.Beer { Name = "Dogfish Head 60-Minute", ABV = "6", City = "Milwaukee", Price = "1.42", BeerTypeId = 3 },
+				new Models.Beer { Name = "Elysian Space Dust", ABV = "8.2", City = "Milwaukee", Price = "1.50", BeerTypeId = 3 },
+				new Models.Beer { Name = "Lagunitas IPA", ABV = "6.2", City = "Milwaukee", Price = "1.30", BeerTypeId = 3 },
+				new Models.Beer { Name = "Ballast Point Aloha Sculpin", ABV = "7", City = "Milwaukee", Price = "2", BeerTypeId = 3 },
+				new Models.Beer { Name = "New Belgium Voodoo Ranger", ABV = "9", City = "Milwaukee", Price = "1.50", BeerTypeId = 3 },
+				new Models.Beer { Name = "Guiness Draught", ABV = "4.3", City = "Milwaukee", Price = "1.57", BeerTypeId = 4 },
+				new Models.Beer { Name = "Left Hand Milk Stout Nitro", ABV = "6", City = "Milwaukee", Price = "1.63", BeerTypeId = 4 },
+				new Models.Beer { Name = "Deschutes Obsidian", ABV = "6.3", City = "Milwaukee", Price = "1.30", BeerTypeId = 4 },
+				new Models.Beer { Name = "Dogfish Head Bitches Brew", ABV = "9", City = "Milwaukee", Price = "2.83", BeerTypeId = 4 },
+				new Models.Beer { Name = "Southern Tier Samoa This", ABV = "10", City = "Milwaukee", Price = "3.50", BeerTypeId = 4 },
+				new Models.Beer { Name = "Big Choice Pinhead Pilsner", ABV = "5", City = "Milwaukee", Price = "1.29", BeerTypeId = 5 },
+				new Models.Beer { Name = "Prost Brewing Company Pils", ABV = "4.7", City = "Milwaukee", Price = "1.3", BeerTypeId = 5 },
+				new Models.Beer { Name = "Widmer Brothers PDX Pils", ABV = "4.8", City = "Milwaukee", Price = "1.35", BeerTypeId = 5 },
+				new Models.Beer { Name = "Rogue Farms Good Chit", ABV = "5.3", City = "Milwaukee", Price = "1.50", BeerTypeId = 5 },
+				new Models.Beer { Name = "Pilsner Urquell", ABV = "5.3", City = "Milwaukee", Price = "1.50", BeerTypeId = 5 }
+				);
+
+			context.Choices.AddOrUpdate(
+				c => c.QuestionID,
+				new Models.Choices { QuestionID = 1, AnswerText = "0-1", BeerTypeId = 1 },
+				new Models.Choices { QuestionID = 1, AnswerText = "2-3", BeerTypeId = 4 },
+				new Models.Choices { QuestionID = 1, AnswerText = "4-6", BeerTypeId = 2 },
+				new Models.Choices { QuestionID = 1, AnswerText = "7-9", BeerTypeId = 3 },
+				new Models.Choices { QuestionID = 1, AnswerText = "10+", BeerTypeId = 5 },
+				new Models.Choices { QuestionID = 2, AnswerText = "9-10", BeerTypeId = 2 },
+				new Models.Choices { QuestionID = 2, AnswerText = "10-11", BeerTypeId = 3 },
+				new Models.Choices { QuestionID = 2, AnswerText = "11-12", BeerTypeId = 1 },
+				new Models.Choices { QuestionID = 2, AnswerText = "12-1", BeerTypeId = 5 },
+				new Models.Choices { QuestionID = 2, AnswerText = "1 or later", BeerTypeId = 4 },
+				new Models.Choices { QuestionID = 3, AnswerText = "rock", BeerTypeId = 4 },
+				new Models.Choices { QuestionID = 3, AnswerText = "indie", BeerTypeId = 3 },
+				new Models.Choices { QuestionID = 3, AnswerText = "country", BeerTypeId = 2 },
+				new Models.Choices { QuestionID = 3, AnswerText = "rap", BeerTypeId = 1 },
+				new Models.Choices { QuestionID = 3, AnswerText = "edm", BeerTypeId = 5 },
+				new Models.Choices { QuestionID = 4, AnswerText = "house party", BeerTypeId = 5 },
+				new Models.Choices { QuestionID = 4, AnswerText = "in nature", BeerTypeId = 3 },
+				new Models.Choices { QuestionID = 4, AnswerText = "sporting event", BeerTypeId = 1 },
+				new Models.Choices { QuestionID = 4, AnswerText = "bar", BeerTypeId = 2 },
+				new Models.Choices { QuestionID = 4, AnswerText = "concert", BeerTypeId = 4 },
+				new Models.Choices { QuestionID = 5, AnswerText = "21", BeerTypeId = 5 },
+				new Models.Choices { QuestionID = 5, AnswerText = "22-30", BeerTypeId = 3 },
+				new Models.Choices { QuestionID = 5, AnswerText = "31-40", BeerTypeId = 2 },
+				new Models.Choices { QuestionID = 5, AnswerText = "41-50", BeerTypeId = 1 },
+				new Models.Choices { QuestionID = 5, AnswerText = "51+", BeerTypeId = 4 }
+				);

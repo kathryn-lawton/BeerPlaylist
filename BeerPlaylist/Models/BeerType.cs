@@ -11,5 +11,6 @@ namespace BeerPlaylist.Models
 		[Key]
 		public int BeerTypeId { get; set; }
 		public string Type { get; set; }
+		public string YoutubeId { get; set; }
 	}
 }
