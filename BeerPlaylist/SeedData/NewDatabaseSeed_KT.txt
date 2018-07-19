@@ -1,11 +1,11 @@
-context.Questions.AddOrUpdate(
-					q => q.QuestionText,
-					new Models.Questions { QuestionText = "How many beers do you consume each week?" },
-					new Models.Questions { QuestionText = "How late do you stay out on a typical night out?" },
-					new Models.Questions { QuestionText = "Out of the options, which music genre do you listen to most??" },
-					new Models.Questions { QuestionText = "What is your ideal drinking atmosphere?" },
-					new Models.Questions { QuestionText = "What is your age?" }
-					);
+			context.Questions.AddOrUpdate(
+				q => q.QuestionText,
+				new Models.Questions { QuestionText = "How many beers do you consume each week?" },
+				new Models.Questions { QuestionText = "How late do you stay out on a typical night out?" },
+				new Models.Questions { QuestionText = "Out of the options, which music genre do you listen to most??" },
+				new Models.Questions { QuestionText = "What is your ideal drinking atmosphere?" },
+				new Models.Questions { QuestionText = "What is your age?" }
+				);
 
 			context.BeerType.AddOrUpdate(
 				b => b.Type,

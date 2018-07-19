@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -64,7 +65,7 @@ namespace BeerPlaylist.Controllers
 
 		[HttpGet]
 		public ActionResult SurveyResults(int? id)
-		{
+		 {
 			if (id == null)
 			{
 				return HttpNotFound();
@@ -76,5 +77,36 @@ namespace BeerPlaylist.Controllers
 
 			return View(model);
 		}
+
+		[HttpGet]
+		public ActionResult Edit(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Beer beer = db.Beer.Find(id);
+			if (beer == null)
+			{
+				return HttpNotFound();
+			}
+			ViewBag.BeerTypeId = new SelectList(db.BeerType, "BeerTypeID", "Type", beer.BeerTypeId);
+			return View(beer);
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "BeerId, Name, ABV, City, Price, BeerTypeId")] Beer beer)
+		{
+			if (ModelState.IsValid)
+			{
+				db.Entry(beer).State = EntityState.Modified;
+				db.SaveChanges();
+				return RedirectToAction("Beers");
+			}
+			ViewBag.BeerTypeId = new SelectList(db.BeerType, "BeerTypeId", "Type", beer.BeerTypeId);
+			return View(beer);
+		}
+
 	}
 }
