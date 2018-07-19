@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201807190244220_youtubeIdBeer.Designer.cs">
       <DependentUpon>201807190244220_youtubeIdBeer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807190320245_updateforum.cs" />
+    <Compile Include="Migrations\201807190320245_updateforum.Designer.cs">
+      <DependentUpon>201807190320245_updateforum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Beer.cs" />
@@ -225,7 +229,6 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\SurveyResultsViewModel.cs" />
     <Compile Include="ViewModels\SurveyViewModel.cs" />
-    <Compile Include="ViewModels\YoutubeDisplayViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-flatly.css" />
@@ -289,8 +292,9 @@
     <Content Include="Views\Forum\Index.cshtml" />
     <Content Include="Views\Home\Beers.cshtml" />
     <Content Include="Views\Home\Survey.cshtml" />
-    <Content Include="Views\Home\QuizResults.cshtml" />
     <Content Include="Views\Home\SurveyResults.cshtml" />
+    <Content Include="Views\Forum\Details.cshtml" />
+    <Content Include="Views\Forum\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807190244220_youtubeIdBeer.resx">
       <DependentUpon>201807190244220_youtubeIdBeer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190320245_updateforum.resx">
+      <DependentUpon>201807190320245_updateforum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BeerPlaylist.Models;
+using Microsoft.AspNet.Identity;
 
 namespace BeerPlaylist.Controllers
 {
@@ -11,18 +13,24 @@ namespace BeerPlaylist.Controllers
     public class ForumController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Forum
         public ActionResult Index()
         {
-            
-         
-            return View(db.Forum.ToList());
+            return View(db.Forum.Include(f => f.User).ToList());
         }
 
         // GET: Forum/Details/5
-        public ActionResult Details()
+        public ActionResult Details(int? id)
         {
-            return View();
+			if(id == null)
+			{
+				return HttpNotFound();
+			}
+
+			var model = db.Forum.Where(f => f.CommentId == id).Include(f => f.User).FirstOrDefault();
+
+            return View(model);
         }
 
         // GET: Forum/Create
@@ -33,62 +41,32 @@ namespace BeerPlaylist.Controllers
 
         // POST: Forum/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Forum model)
         {
-            try
-            {
-                // TODO: Add insert logic here
+			model.UserId = User.Identity.GetUserId();
+			model.Timestamp = DateTime.Now;
+			db.Forum.Add(model);
+			db.SaveChanges();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Forum/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Forum/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+			return RedirectToAction("Details", new { id = model.CommentId });
         }
 
         // GET: Forum/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
-        }
+			if(id != null)
+			{
+				var forum = db.Forum.Where(f => f.CommentId == id).FirstOrDefault();
 
-        // POST: Forum/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+				if(forum != null)
+				{
+					// TODO: Check if admin
+					db.Forum.Remove(forum);
+					db.SaveChanges();
+				}
+			}
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }
