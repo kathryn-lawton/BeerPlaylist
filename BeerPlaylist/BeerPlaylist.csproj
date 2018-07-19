@@ -215,6 +215,14 @@
     <Compile Include="Migrations\201807182026308_newmigration2.Designer.cs">
       <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807190006071_questionmig.cs" />
+    <Compile Include="Migrations\201807190006071_questionmig.Designer.cs">
+      <DependentUpon>201807190006071_questionmig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807190035227_questionmig2.cs" />
+    <Compile Include="Migrations\201807190035227_questionmig2.Designer.cs">
+      <DependentUpon>201807190035227_questionmig2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Beer.cs" />
@@ -225,9 +233,10 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Questions.cs" />
     <Compile Include="Models\Survey.cs" />
-    <Compile Include="Models\SurveyQuestionsChoicesVeiwModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SurveyViewModel.cs" />
+    <Compile Include="ViewModels\YoutubeDisplayViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-flatly.css" />
@@ -291,6 +300,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Forum\Index.cshtml" />
     <Content Include="Views\Home\Beers.cshtml" />
+    <Content Include="Views\Home\Survey.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807182026308_newmigration2.resx">
       <DependentUpon>201807182026308_newmigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190006071_questionmig.resx">
+      <DependentUpon>201807190006071_questionmig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190035227_questionmig2.resx">
+      <DependentUpon>201807190035227_questionmig2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

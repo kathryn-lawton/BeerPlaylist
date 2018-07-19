@@ -1,0 +1,35 @@
+﻿@model BeerPlaylist.ViewModels.SurveyViewModel
+
+@{
+    ViewBag.Title = "Survey";
+}
+
+<h2>Survey</h2>
+
+@using (Html.BeginForm("Survey", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    foreach (var item in Model.questions)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => item.QuestionID, item.QuestionText, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => item.Answer, new SelectList(Model.choices.Where(c => c.QuestionID == item.QuestionID).Select(c => c.AnswerText)), "", new { @class = "form-control" })
+            </div>
+        </div>
+    }
+
+    @*</div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Role, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Role, new SelectList(Model.AspNetRoles, "Name", "Name"), "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    </div>
+}
